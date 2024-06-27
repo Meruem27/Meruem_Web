@@ -1,0 +1,232 @@
+@import url('fonts.css');
+
+.section1 {
+    padding-top: 50px;
+    padding-right: 0;
+    padding-bottom: 0 !important;
+    padding-left: 0;
+}
+
+.text-nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 150px;
+    position: relative;
+    background-color: #c0ebd7;
+}
+
+.text-nav-container {
+    display: flex;
+    position: relative;
+}
+
+.text-nav-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: transparent !important;
+    color: #392f41;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.text-nav-button:hover {
+    border: 2px solid #392f41;
+    color: #057748;
+}
+.text-nav-button.active {
+    color: #057748;
+    font-weight: bold;
+}
+
+.text-nav-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #057748;
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.text-content {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.text-item {
+    display: none;
+    font-size: 30px;
+    font-family: 'simsun';
+    margin-top: -19px !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: justify;
+    border: 4mm ridge #426666;
+    background-color: #f0f0f4;
+}
+
+body.night-mode .text-item {
+    border: 4mm ridge #fffbf0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.text-item.active {
+    display: block;
+}
+
+.section2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 100%;
+    background-color: black;
+    margin-right: 10px;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body.night-mode .section-title::before {
+    background-color: white;
+}
+
+.section-line {
+    width: 5px;
+    height: 30px;
+    background-color: #0073e6;
+    margin-right: 10px;
+}
+
+.four-box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    width: 22%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+.box p {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+body.night-mode .box p {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section3 {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding-top: 0px;
+}
+
+.section-header .section-line {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    height: 1px;
+    background-color: #000;
+    margin-right: 10px;
+}
+
+.section-title h2 {
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: scale(0.95);
+}
+
+.grid-item img {
+    max-width: 100px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.item-text {
+    text-align: left;
+}
+
+.grid-text h3 {
+    margin: 0 0 10px 0;
+}
+
+.grid-text p {
+    margin: 0;
+}
+
+.grid-item.hidden {
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/applications.css">
+    <title>人工智能-应用领域</title>
+</head>
+
+<!-- 导航栏 -->
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">
+                    <img src="Image/logo.png" alt="Logo" class="logo-img">
+                    <span class="logo-text">人工智能</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="history.html" class="nav-link">发展历史</a>
+                    <a href="technology.html" class="nav-link">前沿技术</a>
+                    <a href="applications.html" class="nav-link">应用领域</a>
+                    <a href="resources.html" class="nav-link">学习资源</a>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <a href="#" class="nav-button" id="login-button">登录</a>
+                <a href="#" class="nav-button" id="register-button">注册</a>
+                <span id="user-info" class="user-info" style="display: none;">
+                    <span id="user-name" class="user-name"></span>
+                    <button id="logout-button" class="nav-button">退出</button>
+                </span>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="搜索...">
+                    <button class="search-button" id="search-button">搜索</button>
+                    <div class="search-results-container" id="search-results-container"></div>
+                </div>
+                <img src="Image/sun.svg" alt="换肤功能" class="toggle-skin" id="toggle-skin">
+            </div> 
+        </nav>
+    </header>
+
+    <!-- 登录表单 -->
+    <div id="login-form" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>登录</h2>
+            <form id="loginForm">
+                <label for="login-username">用户名:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-account">账号:</label>
+                <input type="text" id="login-account" name="account" required>
+                
+                <label for="login-password">密码:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <label for="login-captcha">验证码:</label>
+                <div class="captcha-container">
+                    <input type="text" id="login-captcha" name="captcha" required>
+                    <span id="login-captcha-value"></span>
+                    <button type="button" id="login-refresh-captcha">刷新</button>
+                </div>
+                
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 注册表单 -->
+    <div id="register-form" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-register">&times;</span>
+            <h2>注册</h2>
+            <form id="registerForm">
+                <label for="register-username">用户名:</label>
+                <input type="text" id="register-username" name="username" required>
+
+                <label for="register-account">账号:</label>
+                <input type="text" id="register-account" name="account" required>
+                
+                <label for="register-password">密码:</label>
+                <input type="password" id="register-password" name="password" required>
+                
+                <label for="confirm-password">确认密码:</label>
+                <input type="password" id="confirm-password" name="confirmPassword" required>
+                
+                <label for="gender">性别:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                    <option value="other">其他</option>
+                </select>
+                
+                <label for="register-captcha">验证码:</label>
+                <div class="captcha-container">
+                    <input type="text" id="register-captcha" name="captcha" required>
+                    <span id="register-captcha-value"></span>
+                    <button type="button" id="register-refresh-captcha">刷新</button>
+                </div>
+                
+                <button type="submit">注册</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <!-- 横幅图片 -->
+        <section id="banner">
+            <img src="Image/ai_application_banner.png" alt="应用领域横幅">
+        </section>
+
+        <!-- 卡片抽取功能 -->
+        <section id="card-extract" class="animate-on-scroll">
+            <h2>人工智能应用领域</h2>
+            <p><a href="index.html" class="last-page">首页</a> > <a href="applications.html" class="current-page">应用领域</a></p>
+            <div class="card-stack">
+                <div class="card" data-title="Self-Driving">
+                    <img src="Image/Self-Driving.jpg" alt="Self-Driving">
+                    <p><strong>自动驾驶汽车</strong>利用先进的传感器和人工智能技术实现自主导航和行驶。它们能够识别周围环境并做出安全驾驶决策，提高道路安全并减少交通拥堵。</p>
+                </div>
+                <div class="card" data-title="smart-house">
+                    <img src="Image/smart-house.jpg" alt="smart-house">
+                    <p><strong>智能家居</strong>通过物联网技术将家中的各种设备连接起来，使用户能够远程控制照明、温度、安全系统等。人工智能的集成让这些系统能够学习居住者的习惯，自动调整环境以提供更舒适、节能的居住体验。</p>
+                </div>
+                <div class="card" data-title="Facial-Recognition">
+                    <img src="Image/Facial Recognition.jpg" alt="Facial-Recognition">
+                    <p><strong>人脸识别</strong>是一种生物识别技术，它通过分析个人的面部特征来验证或识别身份。这项技术广泛应用于安全系统、移动设备解锁、社交媒体照片标记等功能，提高了个人验证的便捷性和准确性。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 图片翻转功能 -->
+        <section id="flip-cards" class="animate-on-scroll">
+            <h2>更多应用</h2>
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Image/TikTok.jpg" alt="更多应用1">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>TikTok</strong>是一款流行的短视频分享应用，它使用人工智能技术为用户推荐个性化内容。AI算法分析用户的互动行为，如点赞、分享和观看偏好，以精准推送用户可能感兴趣的视频。此外，TikTok的AI还支持内容审核，确保平台上的内容安全和合规。通过这些智能功能，TikTok为用户提供了高度定制化和互动性强的娱乐体验。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Image/Soundation.jpg" alt="更多应用2">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Soundation</strong>是一个在线音乐创作平台，它集成了人工智能技术来辅助音乐制作。AI在Soundation中扮演着重要角色，能够提供音乐建议、自动伴奏生成以及旋律创作辅助，帮助用户快速实现音乐构思。此外，Soundation的AI还能学习和适应不同用户的创作风格，提供个性化的音乐制作体验。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Image/Google Earth Engine.jpg" alt="更多应用3">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Google Earth Engine</strong>是一个由Google开发的对地球进行高分辨率监测的云计算平台，它结合了地理信息系统（GIS）、卫星图像和人工智能技术。这个平台利用AI分析大量的遥感数据，使科学家和研究人员能够监测环境变化、森林覆盖、水资源等，并进行气候变化研究。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Image/Zebra Medical Vision.jpg" alt="更多应用4">
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Zebra Medical Vision</strong>是一家以色列的医疗影像初创公司，专注于利用深度学习技术开发医学影像诊断辅助系统。该公司的AI平台能够分析医学影像，自动识别出肝脏、肺、心血管和骨骼等多种疾病，提高诊断的准确性和效率。该技术已在全球多个国家和地区部署，助力改善了医疗影像学诊断，尤其是在发展中国家。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>智慧未来，AI先行 | 林润豪 | 联系电话：12345678911 | 邮箱：123456789@outlook.com | 时间：2024年6月1日</p>
+    </footer>
+
+    <script src="JS/color_switch.js"></script>
+    <script src="JS/login.js"></script>
+    <script src="JS/search.js"></script>
+    <script src="JS/applications.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/technology.css">
+    <title>人工智能-前沿技术</title>
+</head>
+
+<!-- 导航栏 -->
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">
+                    <img src="Image/logo.png" alt="Logo" class="logo-img">
+                    <span class="logo-text">人工智能</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="history.html" class="nav-link">发展历史</a>
+                    <a href="technology.html" class="nav-link">前沿技术</a>
+                    <a href="applications.html" class="nav-link">应用领域</a>
+                    <a href="resources.html" class="nav-link">学习资源</a>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <a href="#" class="nav-button" id="login-button">登录</a>
+                <a href="#" class="nav-button" id="register-button">注册</a>
+                <span id="user-info" class="user-info" style="display: none;">
+                    <span id="user-name" class="user-name"></span>
+                    <button id="logout-button" class="nav-button">退出</button>
+                </span>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="搜索...">
+                    <button class="search-button" id="search-button">搜索</button>
+                    <div class="search-results-container" id="search-results-container"></div>
+                </div>
+                <img src="Image/sun.svg" alt="换肤功能" class="toggle-skin" id="toggle-skin">
+            </div> 
+        </nav>
+    </header>
+
+    <!-- 登录表单 -->
+    <div id="login-form" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>登录</h2>
+            <form id="loginForm">
+                <label for="login-username">用户名:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-account">账号:</label>
+                <input type="text" id="login-account" name="account" required>
+                
+                <label for="login-password">密码:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <label for="login-captcha">验证码:</label>
+                <div class="captcha-container">
+                    <input type="text" id="login-captcha" name="captcha" required>
+                    <span id="login-captcha-value"></span>
+                    <button type="button" id="login-refresh-captcha">刷新</button>
+                </div>
+                
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 注册表单 -->
+    <div id="register-form" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-register">&times;</span>
+            <h2>注册</h2>
+            <form id="registerForm">
+                <label for="register-username">用户名:</label>
+                <input type="text" id="register-username" name="username" required>
+
+                <label for="register-account">账号:</label>
+                <input type="text" id="register-account" name="account" required>
+                
+                <label for="register-password">密码:</label>
+                <input type="password" id="register-password" name="password" required>
+                
+                <label for="confirm-password">确认密码:</label>
+                <input type="password" id="confirm-password" name="confirmPassword" required>
+                
+                <label for="gender">性别:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                    <option value="other">其他</option>
+                </select>
+                
+                <label for="register-captcha">验证码:</label>
+                <div class="captcha-container">
+                    <input type="text" id="register-captcha" name="captcha" required>
+                    <span id="register-captcha-value"></span>
+                    <button type="button" id="register-refresh-captcha">刷新</button>
+                </div>
+                
+                <button type="submit">注册</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 横幅 -->
+    <div id="banner">
+        <img src="Image/ai_technology_banner.png" alt="人工智能技术">
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="left-column">
+                <p><a href="index.html" class="last-page">首页</a> > <a href="technology.html" class="current-page">前沿技术</a></p>
+                <h2 id="h2-title">人工智能前沿科技</h2>
+                <div id="quantum-computing" class="rounded-box animate-on-scroll">
+                    <img src="Image/Deep Learning.png" alt="Deep Learning">
+                    <p><strong>深度学习（Deep Learning）</strong>是一种基于人工神经网络的机器学习技术，它通过模拟人脑处理信息的方式来识别模式和数据特征。深度学习模型通常包含多层（深层）的网络结构，使得它们能够学习从简单到复杂的数据表示。这些模型特别擅长处理高维度的数据，如图像、声音和文本。深度学习在图像和语音识别、自然语言处理、自动驾驶汽车、医学图像分析等领域取得了革命性的进展，它通过大量的数据训练，能够自动提取特征并进行预测或分类，极大地推动了人工智能的发展和应用。</p>
+                </div>
+                <div id="ai-biomedicine" class="rounded-box animate-on-scroll">
+                    <img src="Image/LLMs.png" alt="LLMs">
+                    <p><strong>自然语言处理（Natural Language Processing, NLP）</strong>是人工智能和语言学领域的一个分支，它致力于使计算机能够理解、解释和生成人类语言。NLP技术通过分析、处理和模拟人类语言的复杂性，使机器能够执行诸如语言翻译、情感分析、语音识别、自动摘要、问题回答等任务。它利用机器学习、深度学习和其他算法来识别语言模式、提取关键信息、理解语境含义，并生成自然流畅的文本。随着技术的进步，NLP在提升搜索引擎、推荐系统、虚拟助手、自动翻译服务等多个领域的用户体验方面发挥着越来越重要的作用。</p>
+                </div>
+                <div id="blockchain" class="rounded-box animate-on-scroll">
+                    <img src="Image/GAN.png" alt="GAN">
+                    <p><strong>混合专家模型（Mixture of Experts, MoE）</strong>是一种机器学习架构，它由多个专家网络（experts）和一个门控网络（gating network）组成。在这种模型中，每个专家网络负责处理输入数据的不同方面或不同类型，而门控网络则负责决定每个输入样本应该由哪个专家网络来处理。MoE模型的优势在于其灵活性和扩展性，它能够结合不同专家的专长来处理复杂的任务，同时通过门控网络动态地分配任务，从而提高模型的整体性能和效率。这种架构在处理大规模数据集和解决多任务学习问题时尤其有效，是当前深度学习和人工智能研究中的一个前沿方向。</p>
+                </div>
+                <div id="blockchain" class="rounded-box animate-on-scroll">
+                    <img src="Image/Moe.png" alt="Moe">
+                    <p><strong>生成对抗网络（Generative Adversarial Networks, GANs）</strong>是一种由两部分组成的深度学习模型，包括一个生成器（Generator）和一个判别器（Discriminator）。生成器的目标是创建逼真的数据实例，如图像、音频或文本，而判别器则尝试区分生成的数据和真实的数据。这两部分在训练过程中相互竞争：生成器不断学习如何产生越来越难以被判别器识别的假数据，而判别器则不断提高其识别真假数据的能力。这种对抗性训练过程推动了生成器的性能提升，最终能够生成高质量、难以与真实数据区分的合成数据。GANs在艺术创作、数据增强、隐私保护以及模拟复杂数据分布等领域有着广泛的应用。</p>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="sphere">
+                    <div class="sphere-item" data-tech="机器学习">
+                        <span class="tech-name">机器学习</span>
+                        <div class="details">机器学习（Machine Learning, ML）：是AI的一个核心分支，侧重于开发算法和统计模型，使计算机能够从数据中学习并做出预测或决策。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="计算机视觉">
+                        <span class="tech-name">计算机视觉</span>
+                        <div class="details">计算机视觉（Computer Vision）：使机器能够“看”和理解图像和视频中的内容，包括物体识别、场景重建和事件检测。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="知识图谱">
+                        <span class="tech-name">知识图谱</span>
+                        <div class="details">知识图谱（Knowledge Graphs）：构建实体之间的关系网络，用于搜索引擎、个性化推荐和数据分析。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="语音识别">
+                        <span class="tech-name">语音识别</span>
+                        <div class="details">语音识别（Speech Recognition）：将人类的语音转换成文本或命令，用于智能助手、自动翻译和语音控制系统。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="图神经网络">
+                        <span class="tech-name">图神经网络</span>
+                        <div class="details">图神经网络（Graph Neural Networks, GNNs）：处理图结构数据的神经网络，适用于社交网络分析、分子结构预测等。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="集成学习">
+                        <span class="tech-name">集成学习</span>
+                        <div class="details">集成学习（Ensemble Learning）：结合多个模型的预测来提高整体性能，常见的方法包括随机森林、梯度提升机等。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="端到端学习">
+                        <span class="tech-name">端到端学习</span>
+                        <div class="details">端到端学习（End-to-End Learning）：在这种方法中，整个系统从输入到输出都是通过一个统一的模型学习得到的，无需人为干预。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="动态系统控制">
+                        <span class="tech-name">动态系统控制</span>
+                        <div class="details">动态系统控制（Control Theory for Dynamic Systems）：将控制理论应用于动态系统，如机器人和自动驾驶车辆。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="零样本学习">
+                        <span class="tech-name">零样本学习</span>
+                        <div class="details">零样本学习（Zero-Shot Learning）：模型能够在没有见过的类别上进行分类，通常依赖于预先定义的类别属性。</div>
+                    </div>
+                    <div class="sphere-item" data-tech="遗传算法">
+                        <span class="tech-name">遗传算法</span>
+                        <div class="details">遗传算法（Genetic Algorithms）：受自然选择启发的优化技术，用于解决搜索和优化问题。</div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>智慧未来，AI先行 | 林润豪 | 联系电话：12345678911 | 邮箱：123456789@outlook.com | 时间：2024年6月1日</p>
+    </footer>
+
+    <script src="JS/color_switch.js"></script>
+    <script src="JS/login.js"></script>
+    <script src="JS/search.js"></script>
+    <script src="JS/technology.js"></script>
+</body>
+</html>

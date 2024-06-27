@@ -1,0 +1,165 @@
+#banner img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2em;
+}
+
+.left-column {
+    flex: 2;
+}
+
+a.last-page {
+    color: #549688;
+}
+
+a.current-page {
+    color: #549688;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#h2-title {
+    font-size: 2em;
+    color: #333;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+body.night-mode #h2-title {
+    color: white;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rounded-box {
+    background: #f9f9f9;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 2px solid #ffffff;
+}
+
+body.night-mode .rounded-box {
+    background-color: black;
+}
+
+.rounded-box img {
+    width: 100%;
+    height: auto;
+}
+
+.rounded-box p {
+    padding: 1em;
+    text-align: justify;
+    hyphens: auto;
+}
+
+body.night-mode .rounded-box p {
+    color: white;
+}
+
+.rounded-box:hover {
+    transform: rotateY(10deg);
+}
+
+.right-column {
+    flex: 1;
+    padding-left: 2em;
+}
+
+.sphere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sphere-item {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #21a675;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.sphere-item:hover {
+    animation: bounce 1s infinite;
+}
+
+.sphere-item.expanded {
+    width: 360px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.sphere-item.expanded .details {
+    width: 360px;
+    display: block;
+    position: relative;
+    white-space: normal;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.sphere-item.expanded .tech-name {
+    display: none;
+}
+
+.sphere-item .details {
+    display: none;
+    position: relative;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.sphere-item.expanded .details {
+    display: block;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(5px);
+    }
+}

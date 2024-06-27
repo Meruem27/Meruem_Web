@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/carousel.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <title>人工智能-首页</title>
+</head>
+
+<!-- 导航栏 -->
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">
+                    <img src="Image/logo.png" alt="Logo" class="logo-img">
+                    <span class="logo-text">人工智能</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="history.html" class="nav-link">发展历史</a>
+                    <a href="technology.html" class="nav-link">前沿技术</a>
+                    <a href="applications.html" class="nav-link">应用领域</a>
+                    <a href="resources.html" class="nav-link">学习资源</a>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <a href="#" class="nav-button" id="login-button">登录</a>
+                <a href="#" class="nav-button" id="register-button">注册</a>
+                <span id="user-info" class="user-info" style="display: none;">
+                    <span id="user-name" class="user-name"></span>
+                    <button id="logout-button" class="nav-button">退出</button>
+                </span>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="搜索...">
+                    <button class="search-button" id="search-button">搜索</button>
+                    <div class="search-results-container" id="search-results-container"></div>
+                </div>
+                <img src="Image/sun.svg" alt="换肤功能" class="toggle-skin" id="toggle-skin">
+            </div>                        
+        </nav>
+    </header>
+
+    <!-- 登录表单 -->
+    <div id="login-form" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>登录</h2>
+            <form id="loginForm">
+                <label for="login-username">用户名:</label>
+                <input type="text" id="login-username" name="username" required>
+
+                <label for="login-account">账号:</label>
+                <input type="text" id="login-account" name="account" required>
+                
+                <label for="login-password">密码:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <label for="login-captcha">验证码:</label>
+                <div class="captcha-container">
+                    <input type="text" id="login-captcha" name="captcha" required>
+                    <span id="login-captcha-value"></span>
+                    <button type="button" id="login-refresh-captcha">刷新</button>
+                </div>
+                
+                <button type="submit">登录</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 注册表单 -->
+    <div id="register-form" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-register">&times;</span>
+            <h2>注册</h2>
+            <form id="registerForm">
+                <label for="register-username">用户名:</label>
+                <input type="text" id="register-username" name="username" required>
+
+                <label for="register-account">账号:</label>
+                <input type="text" id="register-account" name="account" required>
+                
+                <label for="register-password">密码:</label>
+                <input type="password" id="register-password" name="password" required>
+                
+                <label for="confirm-password">确认密码:</label>
+                <input type="password" id="confirm-password" name="confirmPassword" required>
+                
+                <label for="gender">性别:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                    <option value="other">其他</option>
+                </select>
+                
+                <label for="register-captcha">验证码:</label>
+                <div class="captcha-container">
+                    <input type="text" id="register-captcha" name="captcha" required>
+                    <span id="register-captcha-value"></span>
+                    <button type="button" id="register-refresh-captcha">刷新</button>
+                </div>
+                
+                <button type="submit">注册</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <!-- 轮播图 -->
+        <div class="slideshow-container">
+            <a href="history.html"><img src="Image/history.jpg" alt="Slide 1" class="slide initial-slide"></a>
+            <a href="technology.html"><img src="Image/technology.jpg" alt="Slide 2" class="slide"></a>
+            <a href="applications.html"><img src="Image/applications.jpg" alt="Slide 3" class="slide"></a>
+            <a href="resources.html"><img src="Image/resources.jpg" alt="Slide 4" class="slide"></a>
+            <a class="prev" onclick="prevSlide()">&#10094;</a>
+            <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+
+        <div class="section1">
+            <nav class="text-nav">
+                <div class="text-nav-container">
+                    <button class="text-nav-button active" data-target="#text1">人工智能(Artificial Intelligence)</button>
+                    <button class="text-nav-button" data-target="#text2">神经网络(Neural Networks)</button>
+                    <button class="text-nav-button" data-target="#text3">机器学习(Machine Learning)</button>
+                    <button class="text-nav-button" data-target="#text4">自然语言处理(Natural Language Processing)</button>
+                    <div class="underline"></div>
+                </div>
+            </nav>
+            <div class="text-content">
+                <div id="text1" class="text-item active">人工智能是模拟人类智能行为的科技领域，它使机器能够感知、学习、推理并做出决策。人工智能技术广泛应用于图像识别、语音识别和自动驾驶等领域。</div>
+                <div id="text2" class="text-item">神经网络是人工智能的核心算法之一，模仿人脑神经元结构，通过大量数据训练，实现模式识别和预测。神经网络在图像和语音识别中尤为关键。</div>
+                <div id="text3" class="text-item">机器学习是人工智能的一个分支，侧重于算法和统计模型，使计算机系统利用数据进行学习和改进。机器学习包括监督学习、无监督学习和强化学习</div>
+                <div id="text4" class="text-item">自然语言处理是人工智能的另一个分支，专注于使计算机理解和生成人类语言。自然语言处理技术使机器能够翻译语言、回答问题和进行情感分析。</div>
+            </div>
+        </div>
+        
+        <section class="section2" style="margin-top: 50px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="section-line"></span>
+                    <h2>人工智能软件</h2>
+                </div>
+            </div>
+            <div class="four-box-container">
+                <div class="box">
+                    <img src="Image/ChatGPT.jpg" alt="Image 1">
+                    <p>ChatGPT是由OpenAI开发的一款先进的人工智能聊天机器人，能够理解和模拟人类的语言来进行流畅对话。它通过学习大量文本数据，能够提供信息查询、撰写文章、生成代码等多种服务。</p>
+                </div>
+                <div class="box">
+                    <img src="Image/DeepL.jpg" alt="Image 2">
+                    <p>DeepL是一家专注于人工智能翻译技术的公司，以其深度学习算法提供的高质量翻译服务而闻名。用户可以通过DeepL的在线翻译器或集成的API，体验到准确、流畅的多语言翻译效果。</p>
+                </div>
+                <div class="box">
+                    <img src="Image/Faceswap.jpg" alt="Image 3">
+                    <p>Faceswap是一款使用深度学习技术进行人脸交换的软件，它能够将视频中一个人的脸部替换成另一个人的脸。这种技术在电影制作、娱乐和一些专业应用中被用来创造逼真的视觉效果。</p>
+                </div>
+                <div class="box">
+                    <img src="Image/Midjourney.jpg" alt="Image 4">
+                    <p>Midjourney提供先进的AI工具，能够根据文本提示创作出独特且高质量的图像。用户可以通过简单的描述来指导AI创作，这在艺术创作、游戏设计和媒体制作等领域具有广泛的应用潜力。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section3" style="margin-top: 50px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="section-line"></span>
+                    <h2>人工智能公司</h2>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="Image/Google DeepMind.png" alt="Image 5">
+                    <div class="grid-text">
+                        <h3>Google DeepMind</h3>
+                        <p>以其开发的AlphaGo程序而闻名，该公司专注于创建通用人工智能（AGI）</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="Image/OpenAI.png" alt="Image 6">
+                    <div class="grid-text">
+                        <h3>OpenAI</h3>
+                        <p>一个非营利性AI研究组织，开发了包括GPT系列和DALL-E在内的多个AI模型</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="Image/Amazon Web Services (AWS).png" alt="Image 7">
+                    <div class="grid-text">
+                        <h3>Amazon Web Services (AWS)</h3>
+                        <p>提供包括Amazon Lex和Amazon Rekognition在内的多种AI服务</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="Image/Huawei.png" alt="Image 8">
+                    <div class="grid-text">
+                        <h3>Huawei</h3>
+                        <p>华为通过其云平台提供AI服务，并在智能手机和网络设备中集成AI技术</p>
+                    </div>
+                </div>
+                <div class="grid-item hidden">
+                    <img src="Image/Tencent.png" alt="Image 9">
+                    <div class="grid-text">
+                        <h3>Tencent</h3>
+                        <p>腾讯通过其AI实验室和云服务，提供包括语音识别和图像识别在内的AI解决方案</p>
+                    </div>
+                </div>
+                <div class="grid-item hidden">
+                    <img src="Image/Alibaba.png" alt="Image 10">
+                    <div class="grid-text">
+                        <h3>Alibaba</h3>
+                        <p>阿里巴巴集团通过阿里云提供AI服务，并在电子商务和金融服务中应用AI技术</p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="load-more">显示更多</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>智慧未来，AI先行 | 林润豪 | 联系电话：12345678911 | 邮箱：123456789@outlook.com | 时间：2024年6月1日</p>
+    </footer>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/color_switch.js"></script>
+    <script src="JS/carousel.js"></script>
+    <script src="JS/login.js"></script>
+    <script src="JS/search.js"></script>
+</body>
+</html>

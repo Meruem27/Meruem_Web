@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'simsun';
+    src: url('../Fonts/simsun.woff2') format('woff2'),
+         url('../Fonts/simsun.woff') format('woff'),
+         url('../Fonts/simsun.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AaFengKuangYuanShiRen';
+    src: url('../Fonts/AaFengKuangYuanShiRen.woff2') format('woff2'),
+         url('../Fonts/AaFengKuangYuanShiRen.woff') format('woff'),
+         url('../Fonts/AaFengKuangYuanShiRen.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DunHuangFeiTian-XingKaiTi';
+    src: url('../Fonts/DunHuangFeiTian-XingKaiTi.woff2') format('woff2'),
+         url('../Fonts/DunHuangFeiTian-XingKaiTi.woff') format('woff'),
+         url('../Fonts/DunHuangFeiTian-XingKaiTi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ZhuTaoMaoBiZhengKaiTi';
+    src: url('../Fonts/ZhuTaoMaoBiZhengKaiTi.woff2') format('woff2'),
+         url('../Fonts/ZhuTaoMaoBiZhengKaiTi.woff') format('woff'),
+         url('../Fonts/ZhuTaoMaoBiZhengKaiTi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FangZhengKaiTiJianTi';
+    src: url('../Fonts/FangZhengKaiTiJianTi.woff2') format('woff2'),
+         url('../Fonts/FangZhengKaiTiJianTi.woff') format('woff'),
+         url('../Fonts/FangZhengKaiTiJianTi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
